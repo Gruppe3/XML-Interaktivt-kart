@@ -9,7 +9,7 @@
 				stroke-width:0.5;
 			}
             .land:hover{
-                fill: #000000;
+                fill: #FF00000;
 				/*joacim bergh*/
             }
 </style>
