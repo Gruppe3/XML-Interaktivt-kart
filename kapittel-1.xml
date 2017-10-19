@@ -1,0 +1,991 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<kapittel tittel="Chapter 1 - LEXICAL TOKENS">
+  <seksjon tittel="Definitional Conventions">
+    <p>
+    The meta language used in this standard to 
+    specify the syntax of the constructs is based 
+    on the Backus-Naur Form. The meanings of the 
+    various meta symbols are listed in the table 
+    below. Further (semantic) specifications of the 
+    constructs are given in prose and, in some cases, 
+    by equivalent program fragments. In such program 
+    fragments some identifiers introduced by 
+    declarations are printed in upper case. The use 
+    of upper case letters signifies that the 
+    identifier in question represents some quantity 
+    which is inaccessible to a program. An example of 
+    this convention is the identifier EVENT_NOTICE of 
+    chapter 12. Any other identifier that is defined e
+    lsewhere in the standard will denote the 
+    corresponding entity by its occurrence in such a 
+    program fragment.
+    </p>
+    
+    <p>
+      <syntaks>
+        <produksjon>
+          <alternativ>Note:</alternativ> 
+          <alternativ>The use of program fragments as described above, 
+          as well as the description of standard facilities 
+          (see chapters 8-12) by algorithmic means should be 
+            taken as definitive only as far as their effect is 
+          concerned. An actual implementation should seek to 
+          produce these effects in as efficient a manner as 
+          practicable. Furthermore, when arithmetic of real 
+          type is concerned, even the effects must be regarded 
+          as defined with only a finite degree of accuracy (
+          see 3.5.3).
+          </alternativ>
+        </produksjon>
+      </syntaks>
+    </p>
+    
+    <p>
+      <produksjon>
+        <tabell>
+        <rad>
+          <kol>Metasymbol</kol>
+          <kol>Meaning</kol>
+        </rad>
+        <rad>
+          <kol></kol>  
+          <kol></kol>
+        </rad>
+        <rad>               
+          <kol>=</kol>
+          <kol>is defined to be</kol>
+        </rad>
+        <rad>                  
+          <kol>!</kol>
+          <kol>alternatively</kol>
+        </rad>
+        <rad>                  
+          <kol>[ x ]</kol>
+          <kol>0 or 1 instance of x</kol>
+        </rad>
+        <rad>             
+          <kol>{ x }</kol>
+          <kol>0 or more instances of x</kol>
+        </rad>
+        <rad>  
+          <kol>( x | y )</kol>
+          <kol>grouping: either x or y</kol>
+        </rad>
+        <rad>          
+          <kol>xyz</kol>
+          <kol>the terminal symbol xyz</kol>
+        </rad>
+        <rad>       
+          <kol>meta-identifier</kol>
+          <kol>a non-terminal symbol</kol>
+        </rad>
+        <rad>   
+          <kol>...</kol> 
+          <kol>see below</kol>
+        </rad>        
+      </tabell>
+    </produksjon>         
+  </p>  
+    
+    
+    <p>
+     A meta-identifier is a sequence of letters, 
+     digits and hyphens beginning with a letter. 
+     The identifier has intentionally been chosen 
+     to convey a hint of its meaning to the reader. 
+     The exact meaning is, however, defined by its 
+     (single) occurrence on the left hand side of a 
+     production. When used outside productions these 
+     identifiers are generally written with spaces 
+     instead of hyphens, except in cases where 
+     possible ambiguities might result.
+    </p>
+    
+    <p>
+    A few productions contain the ellipsis (...) as a 
+    right hand side. In such cases a prose explanation 
+    is given immediately below the production.
+    </p>
+    
+    <p>
+    A sequence of terminal and non-terminal symbols in a 
+    production implies concatenation of the text that they 
+    ultimately represent. Within chapter 1 this concatenation 
+    is direct; no characters may intervene. In the remainder 
+    of the Standard the concatenation is in accordance with 
+    the rules set out in this chapter.
+    </p>
+    
+    <p>
+    The characters required to form SIMULA programs are those 
+    explicitly classified as "basic" in the table given in 
+    section 1.2. Additional characters of that table may be 
+    employed as described in that section.
+    </p>
+    
+    <p>
+    A SIMULA source module consists of directive lines and 
+    program lines. Apart from 1.1 this standard is not 
+    concerned with directive lines. The lexical tokens 
+    used to construct program lines are classified into 
+    special symbols, identifiers, unsigned numbers, simple 
+    strings and character constants.
+    </p>
+    
+    <p>
+    No lexical token may consist of more than 72 characters.
+    </p>
+    <p>
+    <syntaks>
+      <produksjon>  
+       <term>letter</term>
+         <alternativ>=  A | B | C | D | E | F | G | H | I
+         |  J | K | L | M | N | O | P | Q | R
+         |  S | T | U | V | W | X | Y | Z
+         |  a | b | c | d | e | f | g | h | i
+         |  j | k | l | m | n | o | p | q | r
+         |  s | t | u | v | w | x | y | z
+         </alternativ>
+      </produksjon>
+    </syntaks>
+    </p>  
+    <p>
+    The representation of any letter (upper or lower case, 
+    differences in font, etc.) occurring anywhere other than 
+    in a simple string or a character constant has no 
+    significance in that occurrence for the meaning of 
+    the program.
+    </p>
+    <p>
+      <syntaks>
+        <produksjon>        
+          <term>digit</term>
+            <alternativ>= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9</alternativ>
+          <term>space</term>
+            <alternativ>=  SP</alternativ>
+        </produksjon>
+      </syntaks>
+    </p> 
+      
+    <p>
+    SP is the space (blank) character (ISO 646 code 2/0).
+    </p>
+    
+  </seksjon>
+  <seksjon tittel="Directive lines">
+  
+    <p>
+    If the first character of a line is "%" (percent) 
+    the line as a whole is a directive line.
+    </p>
+    
+    <p>
+    A directive line serves to communicate information to the 
+    processor and consequently its meaning is entirely 
+    implementation-dependent, with the following single exception. 
+    If the second character is a space, the line has no significance; 
+    it may be used for annotation purposes.
+    </p>
+    
+    <p>
+      <syntaks>
+        <produksjon>
+          <term>Note:</term>
+            <alternativ>
+                    The interpretation of a directive line takes precedence over the 
+                    treatment of subsequent lines.
+                    The interpretation by the processor may cause inclusion of 
+                    lines not present in the module, or deletion of some lines 
+                    actually following the directive in question.
+          </alternativ>
+      </produksjon>
+    </syntaks>
+    </p>
+    
+    <p>
+     The language defined in the following defines the resulting program 
+     text after all directive lines have been interpreted and thereafter deleted.
+    </p>
+    
+  </seksjon>
+  <seksjon tittel="The character set">
+  
+    <p>
+      The standard presupposes an 8-bit internal representation of characters. 
+      ISO 2022). Thus the isocode facility allows for inclusion of characters 
+      with "isorank" value greater than 127 in simple strings and character 
+      constants. An implementation may restrict this possibility as well as 
+      the character set given below, as long as the "basic" characters of the 
+      table are included.
+    </p>
+    
+    <p>
+    The standard character set is defined by the table below. For each 
+    character its "isorank" (see 9.2), name or printable representation 
+    and the classification of the character as a program text 
+    constituent are given.
+    </p>
+    
+    <p>
+      <produksjon>
+        <tabell>
+          <rad>
+            <kol>basic:</kol>    
+            <kol>Significant in all contexts.</kol>
+          </rad>
+          <rad>
+            <kol>skip:</kol>     
+            <kol>Skipped in all contexts.</kol>
+          </rad>
+          <rad>
+            <kol>graphic:</kol>  
+            <kol>Significant inside comments, inside simple strings, and inside
+            character constants; illegal outside these constructs.</kol>
+         </rad>
+         <rad>
+            <kol>national:</kol> 
+            <kol>Reserved for national alphabet extension; treated as &quot;graphic&quot;.</kol>
+         </rad>
+         <rad>
+            <kol>format:</kol>   
+            <kol>Format effector, see 1.9.</kol>
+        </rad>
+      </tabell>
+     </produksjon> 
+    </p>
+    <p>
+      <produksjon>
+        <tabell>
+          <rad>      
+               <kol>0</kol> 
+               <kol>NUL</kol>  
+               <kol>skip</kol>        
+               <kol>32</kol>  
+               <kol>SP</kol>  
+               <kol>basic</kol>       
+               <kol>64</kol>      
+               <kol>national</kol>    
+               <kol>96</kol>      
+               <kol>national</kol>
+           </rad>
+           <rad>    
+                <kol>1</kol> 
+                <kol>SOH</kol>  
+                <kol>illegal</kol>     
+                <kol>33 </kol> 
+                <kol>! </kol>  
+                <kol>basic </kol>      
+                <kol>65</kol>  
+                <kol>A  </kol> 
+                <kol>basic</kol>       
+                <kol>97</kol>  
+                <kol>a</kol>   
+                <kol>basic </kol>
+          </rad>
+          <rad>
+                <kol>2</kol> 
+                <kol>STX</kol>  
+                <kol>illegal</kol>     
+                <kol>34 </kol> 
+                <kol>"  </kol> 
+                <kol>basic </kol>      
+                <kol>66</kol>  
+                <kol>B </kol>  
+                <kol>basic</kol>       
+                <kol>98</kol>  
+                <kol>b </kol>  
+                <kol>basic</kol>
+          </rad>
+          <rad>
+                <kol>3</kol> 
+                <kol>ETX</kol>  
+                <kol>illegal</kol>     
+                <kol>35</kol> 
+                <kol>#</kol>   
+                <kol>graphic</kol>     
+                <kol>67</kol>  
+                <kol>C</kol>   
+                <kol>basic</kol>       
+                <kol>99</kol>  
+                <kol>c</kol>   
+                <kol>basic</kol>
+          </rad>
+          <rad>
+                <kol>4</kol> 
+                <kol>EOT</kol>  
+                <kol>illegal</kol>     
+                <kol>36</kol>  
+                <kol>$</kol>   
+                <kol>graphic</kol>     
+                <kol>68</kol>  
+                <kol>D</kol>   
+                <kol>basic</kol>      
+                <kol>100</kol>  
+                <kol>d</kol>   
+                <kol>basic</kol>
+          </rad>
+          <rad>
+                <kol>5</kol> 
+                <kol>ENQ</kol>  
+                <kol>illegal</kol>     
+                <kol>37</kol>  
+                <kol>%</kol>   
+                <kol>graphic</kol>     
+                <kol>69</kol>  
+                <kol>E</kol>  
+                <kol>basic</kol>      
+                <kol>101</kol>  
+                <kol>e</kol>   
+                <kol>basic</kol>
+          </rad>
+          <rad>
+                <kol>6</kol> 
+                <kol>ACK</kol>  
+                <kol>illegal</kol>     
+                <kol>38</kol>  
+                <kol>&amp; </kol>  
+                <kol>basic </kol>      
+                <kol>70</kol>  
+                <kol>F</kol>   
+                <kol>basic</kol>      
+                <kol>102</kol>  
+                <kol>f</kol>   
+                <kol>basic</kol>
+          </rad>
+          <rad>
+                <kol>7</kol> 
+                <kol>BEL</kol>  
+                <kol>illegal</kol>     
+                <kol>39</kol>  
+                <kol>'</kol>   
+                <kol>basic</kol>       
+                <kol>71</kol>  
+                <kol>G</kol>   
+                <kol>basic</kol>      
+                <kol>103</kol>  
+                <kol>g</kol>   
+                <kol>basic</kol>
+          </rad>
+        </tabell>
+      </produksjon>
+    </p>
+    
+  
+    
+    <p>
+    Table 1.1. Standard character set
+    (International Reference Version)
+    </p>
+
+  </seksjon>
+  <seksjon tittel="Special Symbols">
+  <p>
+    <produksjon>
+      <tabell>
+        <rad>
+         <kol>+   -   *   /   //  **</kol>      
+         <kol>Arithmetic operators</kol>
+       </rad>
+       <rad>
+         <kol>&amp;</kol>                          
+         <kol>Text concatenation operator, or exp. mark</kol>
+        </rad>
+       <rad> 
+         <kol>&amp;&amp;</kol>                         
+         <kol>Exponent mark in long real numbers</kol>
+       </rad>
+       <rad>  
+         <kol>:=  :- </kol>                     
+        <kol> Assignment operators</kol>
+       </rad>
+       <rad>  
+         <kol>&lt;   &lt;=  =   &gt;=  &gt;   &lt;&gt;</kol>      
+         <kol>Value relational operators</kol>
+       </rad>
+       <rad>  
+         <kol>==  =/= </kol>                    
+         <kol>Reference relational operators</kol>
+       </rad>
+       <rad>  
+         <kol>'</kol>                           
+         <kol>Character quote</kol>
+       </rad>
+       <rad>  
+         <kol>"   ""</kol>                      
+         <kol>String quote ("" only within strings)</kol>
+       </rad>
+       <rad>  
+         <kol>!</kol>                           
+         <kol>Code quote, or comment</kol>
+       </rad>
+       <rad>  
+         <kol>; </kol>                          
+         <kol>Statement separator, or
+         declaration or specification delimiter</kol>
+       </rad>
+       <rad>                              
+         <kol>:</kol>                           
+         <kol>Array bounds separator, or
+         label definition or virtual delimiter</kol>
+        </rad>
+       <rad> 
+         <kol>(   )</kol>                       
+         <kol>Parameter, array bounds grouping, or expr.</kol>
+       </rad>
+       <rad>  
+         <kol>.</kol>                          
+         <kol>Remote indicator ("dot"), or decimal mark</kol>
+       </rad>
+       <rad>  
+        <kol> ,</kol>                           
+         <kol>Parameter, array bounds pair or expression
+                                     separator</kol> 
+                           
+        </rad>                             
+       </tabell>                              
+     </produksjon>                                
+  </p>
+  <p>
+  Table 1.2. Special symbols, excluding key words
+  </p>
+  
+  <p>
+  Normally the syntax of the language assumes that all syntactic 
+  units are recognised as being the largest possible string of 
+  characters which fits the syntax of a symbol. However, in an 
+  array declaration the symbol ":" is always a bounds separator, 
+  even if it is immediately followed by a minus.
+  </p> 
+  <p>   
+    <produksjon>
+      <tabell>
+        <rad>
+         <kol>activate</kol>    
+         <kol>else</kol>        
+         <kol>if</kol>          
+         <kol>none</kol>        
+         <kol>short</kol>
+        </rad> 
+        <rad> 
+         <kol>after</kol>       
+         <kol>end</kol>         
+         <kol>imp</kol>         
+         <kol>not</kol>         
+         <kol>step</kol>
+        </rad> 
+        <rad>         
+         <kol>and</kol>         
+         <kol>eq</kol>          
+         <kol>in</kol>          
+         <kol>notext</kol>      
+         <kol>switch</kol>
+        </rad> 
+        <rad>         
+         <kol>array</kol>       
+         <kol>eqv</kol>         
+         <kol>inner</kol>
+         <kol></kol>
+         <kol></kol>
+        </rad> 
+        <rad>         
+         <kol>at</kol>          
+         <kol>external</kol>    
+         <kol>inspect</kol>     
+         <kol>or</kol>          
+         <kol>text</kol>
+        </rad> 
+        <rad>         
+         <kol></kol>
+         <kol></kol>                        
+         <kol>integer</kol>     
+         <kol>otherwise</kol>   
+         <kol>then</kol>
+        </rad> 
+        <rad>         
+         <kol>before</kol>      
+         <kol>false</kol>       
+         <kol>is</kol>          
+         <kol></kol>            
+         <kol>this</kol>
+        </rad> 
+        <rad>         
+         <kol>begin</kol>       
+         <kol>for</kol>         
+         <kol></kol>            
+         <kol>prior </kol>     
+         <kol>to</kol>
+        </rad> 
+        <rad>          
+         <kol>boolean</kol>     
+         <kol></kol>            
+         <kol>labe</kol>       
+         <kol>procedure </kol>  
+         <kol>true</kol>
+        </rad> 
+        <rad>         
+         <kol></kol>            
+         <kol>ge</kol>          
+         <kol>le</kol>          
+         <kol>protected</kol>
+         <kol></kol>
+        </rad> 
+        <rad>         
+         <kol>character</kol>   
+         <kol>go</kol>          
+         <kol>long</kol>        
+         <kol></kol>            
+         <kol>until</kol>
+        </rad> 
+        <rad>         
+         <kol>class </kol>      
+         <kol>goto </kol>       
+         <kol>lt</kol>         
+         <kol>qua</kol>
+         <kol></kol>
+        </rad> 
+        <rad>         
+         <kol>comment</kol>     
+         <kol>gt</kol>         
+         <kol></kol>            
+         <kol></kol>             
+         <kol>value</kol>
+        </rad> 
+        <rad>         
+         <kol></kol>
+         <kol></kol>
+         <kol>name</kol>        
+         <kol>reactivate</kol>  
+         <kol>virtual</kol>
+        </rad> 
+        <rad>         
+         <kol>delay</kol>       
+         <kol>hidden</kol>      
+         <kol>ne</kol>          
+         <kol>real</kol>
+         <kol></kol>
+         </rad> 
+        <rad>        
+         <kol>do</kol>         
+         <kol></kol>             
+         <kol>new</kol>         
+         <kol>ref</kol>         
+         <kol>when</kol>
+        </rad> 
+        <rad>         
+         <kol></kol>
+         <kol></kol>
+         <kol></kol>
+         <kol></kol>
+         <kol>while</kol>
+       </rad>                                                       
+      </tabell>
+    </produksjon>
+  </p>
+  <p>
+  Table 1.3. SIMULA key words
+  </p>
+  
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>Note:</term>
+          <alternativ>For typographical reasons, the standard key words may, 
+                      within this Standard, be printed as indicated in table 1.3. 
+                      Within a program, the key words are printed as identifiers 
+                      (cfr. letter production above).
+          </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  
+  </seksjon>
+  <seksjon tittel="Identifiers">
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>identifier</term>
+        <alternativ>=  letter  { letter  |  digit  |  _ }</alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  <p>
+  No identifier can have the same spelling as any key word. 
+  Apart from this, identifiers may be chosen freely. They 
+  have no inherent meaning, but serve for the identification 
+  of language quantities i.e. simple variables, arrays, texts, 
+  labels, switches, procedures, classes and class attributes. 
+  Within a procedure declaration identifiers also act as formal 
+  parameters, in which capacity they may represent a literal 
+  value or any language quantity except a class. All constituent 
+  characters are significant in distinguishing between identifiers.
+  </p>
+  
+  </seksjon>
+  <seksjon tittel="Numbers">
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>unsigned-number</term>
+         <alternativ>=  decimal-number  [ exponent-part ]</alternativ>
+         <alternativ>|  exponent-part</alternativ>
+
+        <term>decimal-number</term>
+         <alternativ>=  unsigned-integer  [ decimal-fraction ]</alternativ>
+         <alternativ>|  decimal-fraction</alternativ>
+
+        <term>decimal-fraction</term>
+         <alternativ>=  .  unsigned-integer</alternativ>
+
+        <term>exponent-part</term>
+         <alternativ>=  ( &amp; | &amp;&amp; )  [ + | - ]  unsigned-integer</alternativ>
+
+        <term>unsigned-integer</term>
+         <alternativ>=  digit  { digit | _ }</alternativ>
+         <alternativ>|  radix R radix-digit { radix-digit | _ }</alternativ>
+
+        <term>radix</term>
+         <alternativ>=  2 | 4 | 8 | 16</alternativ>
+
+        <term>radix-digit</term>
+         <alternativ>=  digit | A | B | C | D | E | F </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+
+  
+  <p>
+  Decimal numbers have their conventional meaning. 
+  The exponent part is a scale factor expressed as an integral power of 10.
+  </p>
+  
+  <p>
+   Unsigned integers are normally expressed in decimal digits. 
+   Unsigned integers of radix 2, 4, 8, or 16 may be expressed as shown. 
+   The radix digits A through F express radix 16 digits 10 through 15 
+   (decimal). The radix determines the legality and the interpretation 
+   of a radix digit in an obvious manner.
+  </p>
+  
+  <p>
+  An unsigned number which is an unsigned integer is of type integer. 
+  Otherwise, if an unsigned number contains an exponent part with a double 
+  ampersand () it is of type long real, else it is of type real.
+  </p>
+  
+  <p>
+  Examples
+  </p>
+  <p>
+    <syntaks>
+      <produksjon>
+        <alternativ>2&amp;1    2.0&amp;+1   .2&amp;2   20.0   200&amp;-1   - represent same <b>real</b> value (20.0)</alternativ>
+        <alternativ>2.345_678&amp;&amp;0                           - <b>long</b> <b>real</b> value (2.345678)</alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  </seksjon>
+  <seksjon tittel="Strings">
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>string</term>
+         <alternativ>
+            =  simple-string { string-separator simple-string }
+         </alternativ>
+
+        <term>string-separator</term>
+         <alternativ>
+            =  token-separator  { token-separator }
+         </alternativ>
+
+        <term>simple-string</term>
+         <alternativ>
+            =  &quot; { ISO-code | non-quote-character | &quot;&quot; } &quot;
+         </alternativ>
+
+        <term>ISO-code</term>
+         <alternativ>
+            =  !  digit  [ digit ]  [ digit ]  !
+         </alternativ>
+
+        <term>non-quote-character</term>
+         <alternativ>
+            =  ...
+        </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  
+  <p>
+  A non-quote-character is
+    <punkt>
+      <indeks>
+          any printing character (incl. space) except the string 
+          qoute ". Such a character represents itself.
+      </indeks>
+    </punkt>
+  </p>
+  
+  <p>
+  A simple string must be contained within a single program line. 
+  Long strings are included as a sequence of simple strings 
+  separated by token separators.
+  </p>
+  
+  <p>
+  In order to include a complete 8-bit coded character set, 
+  any character may be represented within a string by an integer, 
+  its isocode, corresponding to its bit combination. An isocode 
+  cannot consist of more than three digits, and it must be less 
+  than 256. If these conditions are not satisfied, the construction 
+  is interpreted as a character sequence. The string quote may, 
+  however, also be represented in simple strings by two consecutive 
+  quotes (see the last example below). Observe that, as a consequence 
+  of the definitional conventions given earlier in this chapter, 
+  no spaces may intervene between such a pair of string quotes.
+  </p>
+  
+  <p>
+  Examples
+  </p>
+  <p>
+    <produksjon>
+      <tabell>
+        <rad>
+                <kol>The string:</kol>               
+                <kol>represents:</kol>
+        </rad>
+        <rad>
+                <kol>"Ab"  "cde"</kol>               
+                <kol>Abcde</kol>
+          </rad>
+        <rad>      
+                <kol>"AB"  "CDE"  ABCDE</kol>
+                <kol></kol>
+           </rad>
+        <rad>     
+                <kol>"!2!ABCDE!3!"</kol>             
+                <kol>ABCDE enclosed by STX and ETX</kol>
+            </rad>
+        <rad>    
+                <kol>"!2" "!ABCDE!" "3!"</kol>       
+                <kol>!2!ABCDE!3!</kol>
+           </rad>
+        <rad>     
+                <kol>"AB"" C""DE"</kol>             
+                <kol>AB" C"DE</kol>
+                 
+        </rad>
+      </tabell>
+    </produksjon>
+  </p>  
+  </seksjon>
+  
+  <seksjon tittel="Character constants">
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>character-constant</term>
+         <alternativ>=  '  character-designator  ' </alternativ>
+ 
+        <term>character-designator</term>
+         <alternativ>=  ISO-code</alternativ>
+         <alternativ>|  non-quote-character</alternativ>
+         <alternativ>|  "</alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  <p>       
+  A character constant is either a single printing character 
+  or it is an ISO-code - in both cases surrounded by character 
+  quotes (' - ISO 646 code 2/7).
+  </p>
+  <p>
+  Within the data processing system, characters are represented by 
+  values according to some implementation-defined code. This 
+  code also defines the collating sequence used when comparing 
+  character (and text) values by means of relational operators.
+  </p>
+  </seksjon>
+  
+  <seksjon tittel="Comment convention">
+  <p>
+  For the purpose of annotating the program proper comments may be included 
+  in a program. The substitution of end for an end-comment, or a space for a 
+  direct comment does not alter the meaning of a program.
+  </p>
+  <p>
+    <syntaks>
+      <produksjon>
+        <alternativ>Note:</alternativ>
+        <alternativ>As a consequence of 1.8.1 and 1.8.2 comments cannot be nested. It is understood that the 
+                    comment structure encountered first in a program when reading from left to right 
+                    has precedence in being replaced over later structures contained by the sequence.
+        </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  
+  <avsnitt tittel="End comment">
+  <p>
+  The key word end may be followed by any sequence of characters and separation 
+  of lines not containing any of the special symbols <b>end</b>, <b>else</b>, <b>when</b>, <b>otherwise</b>, 
+  or ";". This sequence (excluding the delimiting special symbol, but including 
+  the initial end) constitutes an end-comment.
+  </p>
+  </avsnitt>
+  
+  <avsnitt tittel="Direct comment">
+  <p>
+  The special symbol "!" (exclamation mark) followed by any sequence of characters 
+  or separation of lines not containing ";" (semicolon), and delimited by semicolon, 
+  is treated as a comment if the exclamation mark does not occur within a character 
+  constant or a simple string (in which cases it may either represent itself or act 
+  as a code quote), or within a comment.
+  </p>
+  <p>
+    <syntaks>
+      <produksjon>
+        <alternativ>Note:</alternativ>
+        <alternativ>The delimiting semicolon is considered part of a direct comment and 
+        thus takes part in the substitution.</alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  <p>Example</p>
+  <p>
+    <syntaks>
+      <produksjon>
+        <alternativ>if B then begin ... end !then; else ...
+        </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  <p>is not valid since the ! is part of an end-comment. Thus ";" will act as a 
+  statement separator (and no statement can start with else).</p>
+  </avsnitt>
+  </seksjon>
+  <seksjon tittel="Token Seperators">
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>format-effector </term>
+         <alternativ> =  BS  |  HT  |  LF  |  VT  |  FF  |  CR </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  <p>BS, HT, LF, VT, FF, and CR represent the characters thus named in 
+    table 1.3. A format effector in general acts as a space. In addition, 
+    an implementation may define some additional action to be taken (such 
+    as tabulation when listing the program); such action has no significance 
+    for the meaning of the program
+  </p>
+  <p>
+    <syntaks>
+      <produksjon>
+        <term>token-separator</term>
+        <alternativ> =  ... </alternativ>
+      </produksjon>
+    </syntaks>
+  </p>
+  <p>
+      A token-separator is
+  </p>
+  <p>
+    <punkt>
+      <indeks>a direct comment, or</indeks>
+      <indeks>a space (except in simple strings and character constants), or</indeks>
+      <indeks>a format effector (except as noted for spaces), or</indeks>
+      <indeks>the separation of consecutive lines.</indeks>
+    </punkt>
+  </p>
+  <p>
+     Zero or more token separators may occur between any two consecutive 
+     tokens, or before the first token of a program text. At least one 
+     token separator must occur between any pair of consecutive tokens made 
+     up of identifiers, key words, simple strings or unsigned numbers. 
+     No token separators may occur within tokens.
+  </p>
+  </seksjon>
+  <seksjon tittel="Program interchange and lexical alternatives">
+   <p>In order to ease portability of SIMULA programs, a common representation has 
+   been adopted for the language. This representation is used throughout this 
+   standard except for the following conventions adopted for typographical reasons:
+   </p>
+   <p>
+    <produksjon>
+      <punkt>In order to emphasise the use of the language keywords, 
+          these are printed in a special manner.
+      </punkt>
+      <punkt>Identifiers printed in upper case within this document represent 
+          quantities which are inaccessible to the user. Such identifiers are used 
+          for definitional purposes, they may or may not have actual counterparts 
+          in an implementation of the language.
+      </punkt>
+      <punkt>Program fragments may contain the ellipsis (...) instead of valid 
+          constructs, where it is either obvious from the context what the 
+          construct should be or the intended meaning cannot be expressed in 
+          a simple manner within the language.
+      </punkt>
+    </produksjon>
+  </p>
+<avsnitt tittel="Alternate representation of some symbols">
+  <p>The representation for lexical tokens and separators given in 1.2 
+    to 1.9 constitutes a standard representation for these tokens and separators. 
+    This standard representation is recommended for program interchange.</p>
+  <p>For historical reasons the following alternatives have been defined. 
+    All processors that have the required characters in their character set 
+    must provide both the standard and the alternate representations, and 
+    there is no distinction made between corresponding tokens or separators.
+    </p>
+    <p>The alternate representations for the tokens are</p>
+	<p>
+    <produksjon>
+      <tabell>
+        <rad>
+          <kol>standard token</kol>
+          <kol>kole representation</kol>
+        </rad>
+        <rad>  
+          <kol></kol>   
+          <kol></kol>
+        </rad>
+        <rad>   
+          <kol>&lt;</kol>
+          <kol>lt</kol>
+        </rad>
+        <rad>                   
+          <kol>&lt;=</kol>
+          <kol>le=</kol>
+         </rad>
+        <rad>                     
+          <kol>=&lt;</kol>
+          <kol>eq</kol>
+        </rad>
+        <rad>                      
+          <kol>&gt;=</kol>
+          <kol>ge</kol>
+        </rad>
+        <rad>                     
+          <kol>&gt;</kol>
+          <kol>gt</kol>
+        </rad>
+        <rad>                     
+          <kol>&lt;&gt;</kol>
+          <kol>ne</kol>
+        </rad>
+        <rad>                     
+          <kol>!</kol>
+          <kol>comment</kol>
+        </rad>
+      </tabell>
+    </produksjon>                  
+  </p>               
+  </avsnitt>
+  </seksjon>
+</kapittel>
+
+
+
+
