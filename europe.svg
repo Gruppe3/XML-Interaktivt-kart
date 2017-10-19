@@ -9,9 +9,6 @@
 				stroke-width:0.5;
 			}
             .land:hover{
-                fill: #000000;
-				/*joacim*/
-				/*nei Bergh*/
                 fill: #ffffff;
 				/*joacim bergh*/
 				/*Elias var her*/
