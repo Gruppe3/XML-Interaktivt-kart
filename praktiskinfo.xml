@@ -2,13 +2,54 @@
 <rot>
   <rad>
     <Language>Svensk</Language>
-    <Goverment>Parlamentarisme</Goverment>
-    <Dish>Köttbullar<Dish>
+    <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
+    <Dish>Köttbullar</Dish>
     <Day>6.juni</Day>
     <Song>Du gamla, du fria</Song>
     <Capital>Stockholm</Capital>
-    <Top3>Volvo, Ikea, ABBA</Top3>
+    <Top3>Volvo, IKEA, ABBA</Top3>
     <FunFact>Nord-Korea skylder Sverige 300 millioner euro etter å ha stjålet 1000 Volvoer fra dem for 40 år siden, 
     og hver 6. måned sender Sverige dem en påminnelse angående dette.</FunFact>
   </rad>
+  <rad>
+    <Language>Dansk</Language>
+    <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
+    <Dish>Stekt flæsk med persillesaus</Dish>
+    <Day>5.juni</Day>
+    <Song>Der er et yndigt land</Song>
+    <Capital>København</Capital>
+    <Top3>LEGO, H.C.Andersen, Carlsberg</Top3>
+    <FunFact>Danmark betaler en skatt på 150% på alle nye bilkjøp.</FunFact>
+  </rad>
+  <rad>
+    <Language>Islandsk</Language>
+    <Goverment>Demokratisk republikk</Goverment>
+    <Dish>Hákarl</Dish>
+    <Day>17. juni</Day>
+    <Song>Lofsöngur</Song>
+    <Capital>Reykjavík</Capital>
+    <Top3>Varme kilder(Geysir), Vulkanutbrudd, Björk</Top3>
+    <FunFact>Den siste McDonalds-hamburgeren solgt på Island (fra 2008) råtner i et museum.</FunFact>
+  </rad>
+  <rad>
+    <Language>Japansk</Language>
+    <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
+    <Dish>Sukiyaki</Dish>
+    <Day>23. desember</Day>
+    <Song>Kimi Ga Yo</Song>
+    <Capital>Reykjavík</Capital>
+    <Top3>Sushi, Anime, Teknologi</Top3>
+    <FunFact>75 prosent av japanske kvinner eier en vibrator. Gjennomsnittet i verden er på 47 prosent.</FunFact>
+  </rad>
+  <rad>
+    <Language>Mexico</Language>
+    <Goverment>Føderal republikk</Goverment>
+    <Dish>Mole poblano</Dish>
+    <Day>	16. september</Day>
+    <Song>Mexicanos, al grito de guerra</Song>
+    <Capital>Mexico City</Capital>
+    <Top3>Taco, Tequila, Corona</Top3>
+    <FunFact>En 20 år gammel kvinnelig kriminologistudent ble meksikansk politimester. Den tidligere poltimesteren ble halshugd. 
+    Hun sluttet etter et år og flyktet til USA og søkte asyl der.</FunFact>
+    </rad>
 </rot>
