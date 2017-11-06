@@ -13,12 +13,12 @@
     <h2>Praktisk info om et utvalg land</h2>
     <table border="1">
       <tr bgcolor="#9acd32">
-        <th>Country</th>
-        <!--<th>Country Code</th>
-        <th>Year</th>-->
-        <th>Population</th>
-        <th>Currency</th>
-        <th>Rate</th>
+        <th>Land</th>
+        <!--<th>Landkode</th>
+        <th>År</th>-->
+        <th>Innbyggertall</th>
+        <th>Valuta</th>
+        <th>Kurs</th>
         <th>Språk</th>
         <th>Styreform</th>
         <th>Nasjonalrett</th>
