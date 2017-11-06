@@ -29,7 +29,8 @@ print $xslt->transformToXML($XML1);
 
 $xmlFiles = [
     'innbyggertall.xml',
-    'https://www.dnb.no/portalfront/datafiles/miscellaneous/csv/kursliste_ws.xml'
+    'https://www.dnb.no/portalfront/datafiles/miscellaneous/csv/kursliste_ws.xml',
+    'praktiskinfo.xml'
   ];
   
   $targetDom = new DOMDocument();
