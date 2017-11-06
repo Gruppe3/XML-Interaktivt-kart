@@ -1,11 +1,16 @@
 <?php
-
+/*
 $xml = simplexml_load_file("innbyggertall.xml");
 $xml2 = simplexml_load_file("kursliste.xml");
 
 $kode = $xml2->xpath('//kode');
 foreach($kode as $k){
     $xml->addChild("kode", $k);
+}
+
+$midtkurs = $xml2->xpath('//midtkurs');
+foreach($midtkurs as $m){
+    $xml->addChild("midtkurs", $m);
 }
 
 $xml->asXML('doc.xml');
@@ -20,20 +25,20 @@ $XSL->load( 'index.xsl' );
 $xslt->importStylesheet($XSL);
 
 print $xslt->transformToXML($XML1);
+*/
 
-
-/*
 $xmlFiles = [
-    'test.xml',
-    'test2.xml'
+    'innbyggertall.xml',
+    'https://www.dnb.no/portalfront/datafiles/miscellaneous/csv/kursliste_ws.xml'
   ];
   
   $targetDom = new DOMDocument();
-  $targetDom->appendChild(
-    $targetDom->createProcessingInstruction(
-      'xml-stylesheet', 'type="text/xml" href="index.xsl"' 
-    )
-  );
+  $xslt = new XSLTProcessor();
+  
+  $XSL = new DOMDocument();
+  $XSL->load( 'index.xsl' );
+  $xslt->importStylesheet($XSL);
+
   $rootNode = $targetDom->appendChild(
     $targetDom->createElement('root')
   );
@@ -46,6 +51,7 @@ $xmlFiles = [
     }
   }
   
-  echo $targetDom->save("merged.xml");
-  */
+  $targetDom->save("merged.xml");
+  print $xslt->transformToXML($targetDom);
+  
 ?> 
