@@ -53,8 +53,63 @@
     <Day>	16. september</Day>
     <Song>Mexicanos, al grito de guerra</Song>
     <Capital>Mexico City</Capital>
-    <Top3>Taco, Tequila, Corona</Top3>
+    <Top3>Taco, Alkoholdrikke, Narkotika</Top3>
     <FunFact>En 20 år gammel kvinnelig kriminologistudent ble meksikansk politimester. Den tidligere poltimesteren ble halshugd. 
     Hun sluttet etter et år og flyktet til USA og søkte asyl der.</FunFact>
-    </rad>
+  </rad>
+  <rad>
+    <Country>USA</Country>
+    <Language>Amerikansk engelsk</Language>
+    <Goverment>Føderal republikk</Goverment>
+    <Dish>Apple Pie</Dish>
+    <Day>4.Juli</Day>
+    <Song>the Star-Spangled Banner</Song>
+    <Capital>Washington DC</Capital>
+    <Top3>Internett, Wrestling, Disney</Top3>
+    <FunFact>Donald Trump er President.</FunFact>
+  </rad>
+  <rad>
+    <Country>China</Country>
+    <Language>Kinesisk</Language>
+    <Goverment>Enhetlig Folkerepublikk</Goverment>
+    <Dish>Gong Pao Chicken</Dish>
+    <Day>1.Oktober</Day>
+    <Song>Den friviliges marsj</Song>
+    <Capital>Beijing</Capital>
+    <Top3>Bruce Lee, Kinamat, Kinesiske muren</Top3>
+    <FunFact>Steinene i den kinesiske muren var laget av ris.</FunFact>
+ </rad>
+ <rad>
+    <Country>Australia</Country>
+    <Language>Engelsk</Language>
+    <Goverment>Føderalt parlamentarisk-demokratisk konstitusjonelt monarki</Goverment>
+    <Dish>Meat Pie</Dish>
+    <Day>1.Januar</Day>
+    <Song>Advance Australia Fair</Song>
+    <Capital>Canberra</Capital>
+    <Top3>Kengru, Alligator, Operahuset i Sydney</Top3>
+    <FunFact> Det er en naturlig rosa sjø i Australia.</FunFact>
+  </rad>
+  <rad>
+    <Country>Thailand</Country>
+    <Language>Thailansk</Language>
+    <Goverment>Konstitusjonelt monarki</Goverment>
+    <Dish>Tom Yung Gong</Dish>
+    <Day>5.desember</Day>
+    <Song>Phleng Chat</Song>
+    <Capital>Bangkok</Capital>
+    <Top3>Muay Thai, Grand Palace, Tailansk massasje</Top3>
+    <FunFact> Det er transeksuelle i Thailand.</FunFact>
+  </rad>
+  <rad>
+    <Country>Marokko</Country>
+    <Language>Berbisk</Language>
+    <Goverment>Konstitusjonelt monarki</Goverment>
+    <Dish>Tagine</Dish>
+    <Day>30.Juli</Day>
+    <Song>National Anthem of Marocco</Song>
+    <Capital>Rabat</Capital>
+    <Top3>Sterk mat, Keramikk, Klær</Top3>
+    <FunFact>Marokko er det eneste landet som ikke er i den afrikanske unionen.</FunFact>
+  </rad>
 </rot>
