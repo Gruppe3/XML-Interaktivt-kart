@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rot>
   <rad>
+    <Country>Sverige</Country>
     <Language>Svensk</Language>
     <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
     <Dish>Köttbullar</Dish>
@@ -12,6 +13,7 @@
     og hver 6. måned sender Sverige dem en påminnelse angående dette.</FunFact>
   </rad>
   <rad>
+    <Country>Danmark</Country>
     <Language>Dansk</Language>
     <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
     <Dish>Stekt flæsk med persillesaus</Dish>
@@ -22,6 +24,7 @@
     <FunFact>Danmark betaler en skatt på 150% på alle nye bilkjøp.</FunFact>
   </rad>
   <rad>
+    <Country>Island</Country>
     <Language>Islandsk</Language>
     <Goverment>Demokratisk republikk</Goverment>
     <Dish>Hákarl</Dish>
@@ -32,6 +35,7 @@
     <FunFact>Den siste McDonalds-hamburgeren solgt på Island (fra 2008) råtner i et museum.</FunFact>
   </rad>
   <rad>
+    <Country>Japan</Country>
     <Language>Japansk</Language>
     <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
     <Dish>Sukiyaki</Dish>
@@ -42,7 +46,8 @@
     <FunFact>75 prosent av japanske kvinner eier en vibrator. Gjennomsnittet i verden er på 47 prosent.</FunFact>
   </rad>
   <rad>
-    <Language>Mexico</Language>
+    <Country>Mexico</Country>
+    <Language>Spansk</Language>
     <Goverment>Føderal republikk</Goverment>
     <Dish>Mole poblano</Dish>
     <Day>	16. september</Day>
