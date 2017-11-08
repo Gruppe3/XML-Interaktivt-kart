@@ -157,9 +157,6 @@ img {
 	background-repeat:no-repeat;
 }
 
-#kontakt-row{
-	
-}
 .background-img{
 	background: url(../Bilder/Kontakt/sol-oppe-take-nede-1-gråovarlay.jpg) center no-repeat;
     width: 100%;
@@ -534,16 +531,6 @@ h3B {
 /*Søkefunksjon*/
 @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 @import url(https://raw.github.com/FortAwesome/Font-Awesome/master/docs/assets/css/font-awesome.min.css);
-
-#wrap {
-  margin: 0px 50px;
-  display: inline-block;
-  position: relative;
-  height: 40px;
-  float: right;
-  padding: 0;
-  position: relative;
-}
 
 
 @media screen and (min-width:320px){
