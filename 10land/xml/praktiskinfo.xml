@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rot>
-  <rad>
+<rad>
     <Country>Sverige</Country>
     <Language>Svensk</Language>
     <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
@@ -54,8 +54,7 @@
     <Song>Mexicanos, al grito de guerra</Song>
     <Capital>Mexico City</Capital>
     <Top3>Taco, Alkoholdrikke, Narkotika</Top3>
-    <FunFact>En 20 år gammel kvinnelig kriminologistudent ble meksikansk politimester. Den tidligere poltimesteren ble halshugd. 
-    Hun sluttet etter et år og flyktet til USA og søkte asyl der.</FunFact>
+    <FunFact>I 2007 ble den meksikanske hæren lei av inkompetansen og korrupsjonen i det lokale politiet i Tijuana og konfiskerte våpene deres og ga dem spretterter.</FunFact>
   </rad>
   <rad>
     <Country>USA</Country>
@@ -66,7 +65,7 @@
     <Song>the Star-Spangled Banner</Song>
     <Capital>Washington DC</Capital>
     <Top3>Internett, Wrestling, Disney</Top3>
-    <FunFact>Donald Trump er President.</FunFact>
+    <FunFact>Donald Trump er President i USA.</FunFact>
   </rad>
   <rad>
     <Country>Kina</Country>
@@ -110,6 +109,6 @@
     <Song>Manbit al-ahrah, Masriq al-anwar</Song>
     <Capital>Rabat</Capital>
     <Top3>Sterk mat, Keramikk, Klær</Top3>
-    <FunFact>Marokko er det eneste landet som ikke er i den afrikanske unionen.</FunFact>
+    <FunFact>Tradisjonelt er leveren, ikke hjertet, ansett som symbolet på kjærlighet i Marokko.</FunFact>
   </rad>
 </rot>
