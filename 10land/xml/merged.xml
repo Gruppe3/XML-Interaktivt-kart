@@ -90359,7 +90359,7 @@
 </seddel>
 </valutakurs>
 
-  <rad>
+<rad>
     <Country>Sverige</Country>
     <Language>Svensk</Language>
     <Goverment>Parlamentarisk demokrati/Konstitusjonelt monarki</Goverment>
@@ -90413,8 +90413,7 @@
     <Song>Mexicanos, al grito de guerra</Song>
     <Capital>Mexico City</Capital>
     <Top3>Taco, Alkoholdrikke, Narkotika</Top3>
-    <FunFact>En 20 &#xE5;r gammel kvinnelig kriminologistudent ble meksikansk politimester. Den tidligere poltimesteren ble halshugd. 
-    Hun sluttet etter et &#xE5;r og flyktet til USA og s&#xF8;kte asyl der.</FunFact>
+    <FunFact>I 2007 ble den meksikanske h&#xE6;ren lei av inkompetansen og korrupsjonen i det lokale politiet i Tijuana og konfiskerte v&#xE5;pene deres og ga dem spretterter.</FunFact>
   </rad>
   <rad>
     <Country>USA</Country>
@@ -90425,10 +90424,10 @@
     <Song>the Star-Spangled Banner</Song>
     <Capital>Washington DC</Capital>
     <Top3>Internett, Wrestling, Disney</Top3>
-    <FunFact>Donald Trump er President.</FunFact>
+    <FunFact>Donald Trump er President i USA.</FunFact>
   </rad>
   <rad>
-    <Country>China</Country>
+    <Country>Kina</Country>
     <Language>Kinesisk</Language>
     <Goverment>Enhetlig Folkerepublikk</Goverment>
     <Dish>Gong Pao Chicken</Dish>
@@ -90469,6 +90468,6 @@
     <Song>Manbit al-ahrah, Masriq al-anwar</Song>
     <Capital>Rabat</Capital>
     <Top3>Sterk mat, Keramikk, Kl&#xE6;r</Top3>
-    <FunFact>Marokko er det eneste landet som ikke er i den afrikanske unionen.</FunFact>
+    <FunFact>Tradisjonelt er leveren, ikke hjertet, ansett som symbolet p&#xE5; kj&#xE6;rlighet i Marokko.</FunFact>
   </rad>
 </root>
