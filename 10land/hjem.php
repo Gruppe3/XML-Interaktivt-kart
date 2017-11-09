@@ -9,7 +9,7 @@ lagmergedXML();
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Praktisk info om land</title>
 <link href="styles/main.css" rel="stylesheet" type="text/css">
-<!-- Google Fonts Roboto, alle typer -->
+<!-- Google Fonts Roboto, alle typer joacim er best -->
 <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
     
 </head>
