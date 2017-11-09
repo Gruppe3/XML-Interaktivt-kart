@@ -15,7 +15,7 @@
 <!-- her lager jeg en ny nav "joacim bergh" -->
 <aside id="mytopnav">
     <div id="mySidenav" class="sidenav" >
-       <a href="../hjem.html">Hjem</a>
+       <a href="../hjem.php">Hjem</a>
        <a href="../countries/sverige.php">Sverige</a>
        <a href="../countries/danmark.php">Danmark</a>
        <a href="../countries/island.php">Island</a>
@@ -36,10 +36,10 @@
             <div class="col4">
             <h2 class="infoheader">Praktisk info om Australia</h2></br>
             <?php
-include("functions.php");
-$land = "australia.xsl";
-lagXSL($land);
-?> 
+            include("functions.php");
+            $land = "australia.xsl";
+            lagXSL($land);
+            ?>
             </div>
         </div>
         <div class="col-sm-8">

@@ -17,7 +17,7 @@ lagmergedXML();
 <!-- her lager jeg en ny nav "joacim bergh" -->
     <aside id="mytopnav">
         <div id="mySidenav" class="sidenav" >
-            <a href="../10land/hjem.html">Hjem</a>
+            <a href="../10land/hjem.php">Hjem</a>
            <a href="../10land/countries/sverige.php">Sverige</a>
            <a href="../10land/countries/danmark.php">Danmark</a>
            <a href="../10land/countries/island.php">Island</a>
