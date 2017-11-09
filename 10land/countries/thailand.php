@@ -35,37 +35,11 @@
         <div class="col-sm-4">
             <div class="col4">
             <h2 class="infoheader">Praktisk info om Thailand</h2></br>
-<?php
-
-$xmlFiles = [
-    '../xml/innbyggertall.xml',
-    'https://www.dnb.no/portalfront/datafiles/miscellaneous/csv/kursliste_ws.xml',
-    '../xml/praktiskinfo.xml'
-  ];
-  
-  $targetDom = new DOMDocument();
-  $xslt = new XSLTProcessor();
-  
-  $XSL = new DOMDocument();
-  $XSL->load( 'thailand.xsl' );
-  $xslt->importStylesheet($XSL);
-
-  $rootNode = $targetDom->appendChild(
-    $targetDom->createElement('root')
-  );
-  
-  foreach ($xmlFiles as $xmlFile) {
-    $importDom = new DOMDocument();
-    $importDom->load($xmlFile);
-    foreach ($importDom->documentElement->childNodes as $node) {
-      $rootNode->appendChild($targetDom->importNode($node, TRUE));
-    }
-  }
-  
-  $targetDom->save("../xml/merged.xml");
-  print $xslt->transformToXML($targetDom);
-  
-?> 
+            <?php
+            include("functions.php");
+            $land = "thailand.xsl";
+            lagXSL($land);
+            ?> 
             </div>
         </div>
         <div class="col-sm-8">
