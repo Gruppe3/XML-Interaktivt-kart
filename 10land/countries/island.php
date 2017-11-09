@@ -36,7 +36,7 @@
             <div class="col4">
             <h2 class="infoheader">Praktisk info om Island</h2></br>
             <?php
-            include("functions.php");
+            include("../functions/functions.php");
             $land = "island.xsl";
             lagXSL($land);
             ?> 

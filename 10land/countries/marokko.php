@@ -36,7 +36,7 @@
             <div class="col4">
             <h2 class="infoheader">Praktisk info om Marokko</h2></br>
             <?php
-            include("functions.php");
+            include("../functions/functions.php");
             $land = "marokko.xsl";
             lagXSL($land);
             ?> 
