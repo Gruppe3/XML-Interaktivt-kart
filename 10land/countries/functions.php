@@ -15,7 +15,6 @@ function lagXSL($land){
   $targetDom->load("../xml/merged.xml");
   print $xslt->transformToXML($targetDom);
 }
-
 function lagmergedXML(){
     
     $xmlFiles = [
